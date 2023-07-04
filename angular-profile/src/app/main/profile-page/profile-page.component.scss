@@ -1,0 +1,543 @@
+/* Profile Page Styles */
+.profile-page {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  line-height: 3em;
+  width: 20%;
+  height: 100%;
+  background-color: #f4f4f4;
+  overflow-y: auto;
+  padding: 20px;  
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  scroll-behavior: smooth;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+}
+
+.side-nav h2 {
+  font-size: 18px;
+  color: #611c92;
+}
+
+.profile-picture {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.profile-header {
+  text-align: center;
+  width: auto;
+  margin: 20px;
+  border-bottom: 1px solid #555;
+}
+
+.profile-name {
+  font-size: 24px;
+  margin: 0;
+  color: #555;
+}
+
+.profile-description {
+  font-size: 20px;
+  color: #888;
+  margin: 0;  
+  word-spacing: 5px;
+  letter-spacing: 3px;
+}
+
+
+.contact-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;  
+  flex-direction: column;
+  align-items: flex-start;
+}
+.contact-list ul{
+  margin: 0;
+  padding: 0;
+}
+.contact-list li {
+  padding: 10px;
+}
+
+.contact-list li:last-child {
+  margin-right: 0;
+}
+
+.contact-list li:hover {
+  text-decoration: #611c92 underline;
+}
+
+.contact-list li a {
+  color: #555;
+  text-decoration: none;
+}
+
+.contact-list li i {
+  margin-right: 10px;  
+  color: #555;
+}
+
+
+.main-content {
+  width: 75%;
+  height: auto;
+  margin-left: 25%;
+  padding: 15px;
+  padding-top: 0;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+}
+
+.profile-details h2 {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #611c92;
+}
+
+.profile-details p {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+.experience-list li,
+.education-list li,
+.certifications-list li {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.skill{
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.skill-list{
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skill-name {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.star-rating {
+  display: inline-block;
+  i{
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+}
+
+.skill-name {
+  flex: 1;
+  margin-right: 10px;
+  color: #555;
+}
+.skill-expertise{
+  color: #888;
+}
+
+.star-rating {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.filled{
+  color: #f4d742;
+}
+.empty-star {
+  color: #ccc;
+}
+
+
+.carousel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.carousel-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.carousel-card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.carousel-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.carousel-card h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #555;
+}
+
+.carousel-card p {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #888;
+}
+
+
+.dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  background-color: #fff;
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.title {
+  margin: 0;
+}
+
+.close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 20px;
+  color: #888;
+}
+
+.body {
+  text-align: center;
+}
+
+.enlarged-image {
+  max-width: 100%;
+  max-height: 80vh;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .profile-page {
+    flex-direction: column;
+  }
+
+  .side-nav {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
+    }
+  }
+
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+  }
+
+  .profile-header {
+    padding: 10px;
+  }
+
+  .profile-name {
+    font-size: 20px;
+  }
+
+  .profile-description {
+    font-size: 14px;
+  }
+
+  .sidenavContent {
+    justify-content: center;
+  }
+
+  .side-nav h2 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .skill-list li {
+    margin-bottom: 8px;
+  }
+
+  .skill-name {
+    margin-right: 8px;
+  }
+
+  .star-rating {
+    display: inline-block;
+  }
+
+  .skill-list {
+    padding: 0;
+  }
+
+  .skill-list li {
+    margin-bottom: 8px;
+  }
+
+  .skill-name {
+    margin-right: 8px;
+  }
+
+  .skill-expertise {
+    font-size: 12px;
+  }
+
+  .star-rating {
+    display: inline-block;
+  }
+
+  .star {
+    width: 16px;
+    height: 16px;
+    margin-right: 3px;
+  }
+
+  .contact-list {
+    padding: 0;
+  }
+
+  .contact-list li {
+    margin-right: 8px;
+    padding: 8px;
+  }
+
+  .contact-list li:last-child {
+    margin-right: 0;
+  }
+
+  .contact-list li:hover {
+    text-decoration: underline;
+  }
+
+  .contact-list li a {
+    font-size: 14px;
+  }
+
+  .contact-list li i {
+    margin-right: 8px;
+  }
+
+  .main-content {
+    width: 100%;
+    margin-left: 0;
+    padding: 10px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
+    }
+  }
+
+  .profile-details h2 {
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .profile-details p {
+    margin-bottom: 10px;
+  }
+
+  .experience-list li,
+  .education-list li,
+  .certifications-list li {
+    margin-bottom: 8px;
+  }
+
+  .carousel {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .carousel-card {
+    padding: 15px;
+    transition: transform 0.3s ease;
+  }
+
+  .carousel-card img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .carousel-card h3 {
+    margin-top: 8px;
+    font-size: 16px;
+  }
+
+  .carousel-card p {
+    margin-top: 4px;
+    font-size: 12px;
+  }
+
+  .dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .content {
+    background-color: #fff;
+    width: 90%;
+    max-width: 400px;
+    padding: 15px;
+    border-radius: 4px;
+  }
+
+  .header {
+    margin-bottom: 8px;
+  }
+
+  .title {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .close {
+    font-size: 18px;
+  }
+
+  .body {
+    text-align: center;
+  }
+
+  .enlarged-image {
+    max-width: 100%;
+    max-height: 60vh;
+  }
+}
+
+.menu-bar {
+  display: none;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .menu-bar {
+    display: block; /* Show menu bar on mobile devices */
+  }
+
+  .side-nav.open {
+    display: block; /* Show side nav when open class is added */
+  }
+
+  .main-content.open {
+    display: none; /* Hide main content when side nav is open */
+  }
+}

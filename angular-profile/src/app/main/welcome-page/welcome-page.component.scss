@@ -1,0 +1,115 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&display=swap');
+
+.welcome-page {  
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  height: 75vh;
+  width: 85vw;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.col {
+  flex: 1;
+  padding: 20px;
+}
+
+.image-col img {
+  width: 100%;
+  height: auto;
+}
+
+.content-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 500;
+  color: #611c92;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.view-profile-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #611c92;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.view-profile-button:hover {
+  opacity: 0.8;
+}
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+  .welcome-page {
+    height: auto;
+    background-color: transparent;
+  }
+
+  .row {
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .col {
+    padding: 10px;
+  }
+
+  .image-col img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .view-profile-button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

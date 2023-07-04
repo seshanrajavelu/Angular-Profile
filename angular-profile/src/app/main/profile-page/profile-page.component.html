@@ -1,0 +1,122 @@
+<div class="profile-page row">  
+  <div class="menu-bar">
+    <i class="fas fa-bars" id="menu-icon" (click)="toggleSideNav()"></i>
+  </div>
+  <div class="side-nav col-md-4"  [ngClass]="{'open': isSideNavOpen}">
+    <div class="profile-header">
+      <div class="profileImg">
+        <img class="profile-picture" src="../../assets/profileImg.png" alt="Profile Picture">
+      </div>
+      <h1 class="profile-name">Seshan R</h1>
+      <p class="profile-description">Frontend Developer</p>
+      <ul class="contact-list">        
+      <h2>Contact</h2>
+        <li><i class="fas fa-envelope"></i><a
+            href="mailto:seshan05677@gmail.com">{{'seshan05677@gmail.com'|lowercase}}</a></li>
+        <li><i class="fas fa-phone"></i><a href="tel:9786379123">9786379123</a></li>
+        <li><i class="fab fa-linkedin"></i><a
+            href="https://www.linkedin.com/in/seshan-r-929b79192/">www.linkedin.com/in/seshan-r-929b79192/</a></li>
+      </ul>
+    </div>
+ 
+  </div>
+  <div class="main-content col-md-8" [ngClass]="{'open': isSideNavOpen}">
+    <div class="profile-details">
+      <h2>About Me</h2>
+      <p>I am a passionate frontend developer with a strong foundation in web technologies. My expertise lies in
+        crafting responsive and user-friendly user interfaces using HTML, CSS, and JavaScript. I thrive on creating
+        visually appealing and intuitive designs to enhance user experiences.</p>
+      <p>Throughout my career, I have honed my skills in various frontend frameworks, with a focus on Angular. I enjoy
+        working on challenging projects that allow me to push the boundaries of what's possible in web development. I am
+        always eager to learn and stay updated with the latest trends and best practices in frontend development.</p>
+      <p>As a team player, I believe in effective communication and collaboration to achieve project success. I am open
+        to feedback and value constructive criticism as it helps me grow both personally and professionally.</p>
+      <p>When I am not coding, you can find me exploring new technologies, reading tech blogs, or attending web
+        development meetups. I am enthusiastic about contributing to the ever-evolving web development community and
+        making a positive impact on the digital world.</p>
+      <h2>Education</h2>
+      <ul class="education-list">
+        <li>Bachelor of Technology in Electrical and Electronics Engineering </li>
+        <p>
+          <strong>Institution:</strong> Christ College of Engineering and Technology, Pondicherry<br>
+          <strong>Duration:</strong> 2016-2020
+        </p>
+        <li>Master of Business Administration in International Business Management</li>
+
+        <p>
+          <strong>Institution:</strong> Pondicherry University, Pondicherry<br>
+          <strong>Duration:</strong> 2022-Pursuing
+        </p>
+      </ul>
+        <h2>Skills</h2>
+        <ul class="skill">
+          <li class="skill-list" *ngFor="let skill of skills">
+            <span class="skill-name">{{ skill.name }}</span>
+            <div class="star-rating">
+              <i class="star" [class.filled]="i < skill.level" [class.empty-star]="i >= skill.level"
+                *ngFor="let i of [1, 2, 3, 4, 5]" class="fa-sharp fa-solid fa-star"></i>
+            </div>
+          </li>
+        </ul>
+      <h2>Certifications</h2>
+      <div class="carousel">
+        <div class="carousel-card" (click)="openCertificateModal('../../assets/certificates/hackerrank basic.png', 'Angular (Basic) Certification' )">
+          <img src="../../assets/certificates/hackerrank basic.png" alt="Angular">
+          <h3>Angular (Basic) Certification</h3>
+          <p>HackerRank</p>
+        </div>
+        <div class="carousel-card" (click)="openCertificateModal('../../assets/certificates/hackerrank intermediate.jpg', 'Angular (Intermediate) Certification')">
+          <img src="../../assets/certificates/hackerrank intermediate.jpg" alt="Angular">
+          <h3>Angular (Intermediate) Certification</h3>
+          <p>HackerRank</p>
+        </div>
+        <div class="carousel-card" (click)="openCertificateModal('../../assets/certificates/BMC.jpg','Business Model Canvas Essentials Professional Certification (BMCEPC™)')">
+          <img src="../../assets/certificates/BMC.jpg" alt="BMCEPC">
+          <h3>Business Model Canvas Essentials Professional Certification (BMCEPC™)</h3>
+          <p>CertiProf</p>
+        </div>
+        <div class="carousel-card" (click)="openCertificateModal('../../assets/certificates/BI.jpg','Business Intelligence Foundation Professional Certification (BIFPC™)')">
+          <img src="../../assets/certificates/BI.jpg" alt="BIFPC">
+          <h3>Business Intelligence Foundation Professional Certification (BIFPC™)</h3>
+          <p>CertiProf</p>
+        </div>
+        <div class="carousel-card" (click)="openCertificateModal('../../assets/certificates/agile cognizant.png','Agile Methodology Virtual Experience Program')">
+          <img src="../../assets/certificates/agile cognizant.png" alt="Agile Cognizant">
+          <h3>Agile Methodology Virtual Experience Program</h3>
+          <p>Cognizant</p>
+        </div>
+        <div class="carousel-card" (click)="openCertificateModal('../../assets/certificates/Mendix.jpg','Mendix Rapid Developer Certificatio')">
+          <img src="../../assets/certificates/Mendix.jpg" alt="Mendix">
+          <h3>Mendix Rapid Developer Certification</h3>
+          <p>Mendix</p>
+        </div>
+        <div class="carousel-card" (click)="openCertificateModal('../../assets/certificates/data privacy.jpg','Data Privacy & Information Security Netlink V3.2 Certification')">
+          <img src="../../assets/certificates/data privacy.jpg" alt="Data Privacy Netlink">
+          <h3>Data Privacy & Information Security Netlink V3.2 Certification</h3>
+          <p>Traliant</p>
+        </div>
+      </div>
+
+
+      <p>In addition to my skills and experience, I have acquired several certifications in various domains. These
+        certifications include Business Model Canvas Essentials, Mendix Rapid Developer, Angular (Intermediate and
+        Basic), Data Privacy & Information Security, and Business Intelligence Foundation. These certifications validate
+        my expertise in these areas and demonstrate my commitment to professional development.</p>
+    </div>
+  </div>
+</div>
+
+
+<div class="dialog" *ngIf="modalCertificateView">
+  <div class="content">
+    <div class="header">
+      <h4 class="title">{{certificateTitle}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="close()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="body">
+      <img [src]="enlargedImageUrl" alt="Enlarged Certificate Image" class="enlarged-image">
+    </div>
+  </div>
+</div>
