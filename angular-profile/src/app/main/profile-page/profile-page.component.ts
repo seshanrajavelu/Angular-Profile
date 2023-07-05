@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
@@ -22,14 +22,20 @@ export class ProfilePageComponent {
   enlargedImageUrl!: string;
   modalCertificateView: boolean = false;
   certificateTitle: string = '';
-  isSideNavOpen: boolean = false;
+  activeSection: string = 'about';
 
   constructor(private modalService: BsModalService) {}
 
-  toggleSideNav() {
-    this.isSideNavOpen = !this.isSideNavOpen;
-  }
   ngOnInit(): void {}
+  isActive(section: string): boolean {
+    return this.activeSection === section;
+  }
+  scrollToSection(id: string) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
   openCertificateModal(imageUrl: string, title: string): void {
     this.enlargedImageUrl = imageUrl;
     this.certificateTitle = title;
