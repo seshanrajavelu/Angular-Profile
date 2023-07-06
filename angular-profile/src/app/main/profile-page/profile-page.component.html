@@ -1,24 +1,49 @@
 <div class="mainProfileContainer">
   <div class="top-navbar">
-    <ul class="nav-menu">
-      <li><a href="javascript:void(0)" (click)="scrollToSection('aboutSection')"
-          [class.active]="isActive('about')">About</a></li>
-      <li><a href="javascript:void(0)" (click)="scrollToSection('educationSection')"
-          [class.active]="isActive('education')">Education</a></li>
-      <li><a href="javascript:void(0)" (click)="scrollToSection('experienceSection')"
-          [class.active]="isActive('experience')">Experience</a></li>
-      <li><a href="javascript:void(0)" (click)="scrollToSection('skillsSection')"
-          [class.active]="isActive('skills')">Skill</a></li>
-      <li><a href="javascript:void(0)" (click)="scrollToSection('certificationsSection')"
-          [class.active]="isActive('experience')">Certification</a></li>
-      <li><a href="javascript:void(0)" (click)="scrollToSection('projectsSection')"
-          [class.active]="isActive('projects')">Project</a></li>
-      <li><a href="javascript:void(0)" (click)="scrollToSection('interestsSection')"
-          [class.active]="isActive('interests')">Interest</a></li>
-      <li><a href="javascript:void(0)" (click)="scrollToSection('contactSection')"
-          [class.active]="isActive('contact')">Contact</a></li>
+    <div class="navTitle">
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <h1>My Portfolio</h1>
+    </div>
+    <div class="mobile-toggle" >
+      <i class="fas fa-bars" (click)="toggleMobileMenu()"></i>
+    </div>
+    <ul class="nav-menu" *ngIf="isMobileMenuOpen">
+      <li><a href="javascript:void(0)" (click)="scrollToSection('aboutSection')">About</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSection('educationSection')">Education</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSection('experienceSection')">Experience</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSection('skillsSection')">Skill</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSection('certificationsSection')">Certification</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSection('projectsSection')">Project</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSection('interestsSection')">Interest</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSection('contactSection')">Contact</a></li>
+    </ul>
+    <ul class="nav-menu-mobile" [class.show]="!isMobileMenuOpen">
+      <button type="button" class="close" aria-label="Close" (click)="toggleMobileMenu()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <li><a href="javascript:void(0)" (click)="scrollToSection('aboutSection')">About</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSection('educationSection')">Education</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSection('experienceSection')">Experience</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSection('skillsSection')">Skill</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSection('certificationsSection')">Certification</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSection('projectsSection')">Project</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSection('interestsSection')">Interest</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSection('contactSection')">Contact</a></li>
     </ul>
   </div>
+  
+  
   <div class="profile-page row">
     <div class="side-nav col-md-4">
       <div class="profile-header">
@@ -27,61 +52,77 @@
         </div>
         <h1 class="profile-name">Seshan R</h1>
         <p class="profile-description">Frontend Developer</p>
-        <div id="about" class="contact-list">
-          <h2>Contact</h2>
-          <ul>
-            <li><i class="fas fa-envelope"></i><br><a
-                href="mailto:seshan05677@gmail.com">{{'seshan05677@gmail.com'|lowercase}}</a></li>
-            <li><i class="fas fa-phone"></i><br><a href="tel:9786379123">9786379123</a></li>
-            <li><i class="fab fa-linkedin"></i><br><a
-                href="https://www.linkedin.com/in/seshan-r-929b79192/">www.linkedin.com/in/seshan-r-929b79192/</a></li>
-          </ul>
+        <div matTooltip="Download Resume" class="downloadBtn">
+          <button>Download CV</button>
         </div>
       </div>
+      <div class='air air1'></div>
+      <div class='air air2'></div>
+      <div class='air air3'></div>
+      <div class='air air4'></div>
     </div>
     <div class="main-content col-md-8">
       <div class="profile-details">
+
         <div id="aboutSection" class="section">
           <div class="aboutMe">
             <h2>About Me</h2>
-            <p>I am a passionate frontend developer with a strong foundation in web technologies. My expertise lies in
-              crafting responsive and user-friendly user interfaces using HTML, CSS, and JavaScript. I thrive on
-              creating
-              visually appealing and intuitive designs to enhance user experiences.</p>
-            <p>Throughout my career, I have honed my skills in various frontend frameworks, with a focus on Angular. I
-              enjoy
-              working on challenging projects that allow me to push the boundaries of what's possible in web
-              development.
-              I
-              am
-              always eager to learn and stay updated with the latest trends and best practices in frontend development.
-            </p>
-            <p>As a team player, I believe in effective communication and collaboration to achieve project success. I am
-              open
-              to feedback and value constructive criticism as it helps me grow both personally and professionally.</p>
-            <p>When I am not coding, you can find me exploring new technologies, reading tech blogs, or attending web
-              development meetups. I am enthusiastic about contributing to the ever-evolving web development community
-              and
-              making a positive impact on the digital world.</p>
+            <p>I am a passionate frontend developer with expertise in crafting responsive and user-friendly user interfaces using HTML, CSS, and JavaScript. I enjoy creating visually appealing and intuitive designs to enhance user experiences.</p>
+            <p>I have a strong focus on Angular and constantly strive to push the boundaries of web development. I value effective communication and collaboration for project success, and I am open to feedback and continuous learning.</p>
+            <p>When I'm not coding, I explore new technologies, read tech blogs, and participate in web development meetups. I'm enthusiastic about contributing to the ever-evolving web development community and making a positive impact.</p>
           </div>
         </div>
+
         <div id="educationSection" class="section">
           <div class="education">
             <h2>Education</h2>
-            <ul class="education-list">
-              <li>Bachelor of Technology in Electrical and Electronics Engineering </li>
-              <p>
-                <strong>Institution:</strong> Christ College of Engineering and Technology, Pondicherry<br>
-                <strong>Duration:</strong> 2016 - 2020
-              </p>
-              <li>Master of Business Administration in International Business Management</li>
-              <p>
-                <strong>Institution:</strong> Pondicherry University, Pondicherry<br>
-                <strong>Duration:</strong> 2022 - Pursuing
-              </p>
-            </ul>
+            <div class="education-item">
+              <div class="company-logo">
+                <img src="../../assets/christ.jpeg" alt="ug logo">
+              </div>
+              <div class="education-details">
+                <h3>Bachelor of Technology in Electrical and Electronics Engineering</h3>
+                <p>
+                  <strong>Institution:</strong> Christ College of Engineering and Technology, Pondicherry<br>
+                  <strong>Duration:</strong> 2016 - 2020
+                </p>
+              </div>
+            </div>
+            <div class="education-item">
+              <div class="company-logo">
+                <img src="../../assets/pdyUniversity.jpeg" alt="pg logo">
+              </div>
+              <div class="education-details">
+                <h3>Master of Business Administration in International Business Management</h3>
+                <p>
+                  <strong>Institution:</strong> Pondicherry University, Pondicherry<br>
+                  <strong>Duration:</strong> 2022 - Pursuing
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+
+        <div id="experienceSection" class="section">
+          <div class="experience">
+            <h2>Experience</h2>
+            <div class="experience-item">
+              <div class="company-logo">
+                <img src="../../assets/xebial.jpeg" alt="Xebia logo">
+              </div>
+              <div class="company-details">
+                <h3>Xebia</h3>
+                <p class="employment-type">Full-time · 1 yr 5 mos</p>
+                <p class="position">Trainee Developer ( Angular )</p>
+                <p class="duration">Jul 2022 - Present · 1 yr 1 mo</p>
+                <p class="position">Internship Trainee</p>
+                <p class="duration">Mar 2022 - Jun 2022 · 4 mos</p>
+                <p class="location">Tamil Nadu, India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div id="skillsSection" class="section">
           <div class="skills">
             <h2>Skills</h2>
@@ -96,12 +137,13 @@
             </ul>
           </div>
         </div>
+        
         <div id="certificationsSection" class="section">
           <div class="certification">
             <h2>Certifications</h2>
-            <div class="carousel">
+            <div class="carousel owl-carousel">
               <div class="carousel-card"
-                (click)="openCertificateModal('../../assets/certificates/hackerrank basic.png', 'Angular (Basic) Certification' )">
+                (click)="openCertificateModal('../../assets/certificates/hackerrank basic.png', 'Angular (Basic) Certification')">
                 <img src="../../assets/certificates/hackerrank basic.png" alt="Angular">
                 <h3>Angular (Basic) Certification</h3>
                 <p>HackerRank</p>
@@ -113,105 +155,155 @@
                 <p>HackerRank</p>
               </div>
               <div class="carousel-card"
-                (click)="openCertificateModal('../../assets/certificates/BMC.jpg','Business Model Canvas Essentials Professional Certification (BMCEPC™)')">
+                (click)="openCertificateModal('../../assets/certificates/BMC.jpg', 'Business Model Canvas Essentials Professional Certification (BMCEPC™)')">
                 <img src="../../assets/certificates/BMC.jpg" alt="BMCEPC">
                 <h3>Business Model Canvas Essentials Professional Certification (BMCEPC™)</h3>
                 <p>CertiProf</p>
               </div>
               <div class="carousel-card"
-                (click)="openCertificateModal('../../assets/certificates/BI.jpg','Business Intelligence Foundation Professional Certification (BIFPC™)')">
-                <img src="../../assets/certificates/BI.jpg" alt="BIFPC">
+                (click)="openCertificateModal('../../assets/certificates/BI.jpg', 'Business Intelligence Foundation Professional Certification (BIFPC™)')">
+                <img src="../../assets/certificates/bi.jpg" alt="BIFPC">
                 <h3>Business Intelligence Foundation Professional Certification (BIFPC™)</h3>
                 <p>CertiProf</p>
               </div>
               <div class="carousel-card"
-                (click)="openCertificateModal('../../assets/certificates/agile cognizant.png','Agile Methodology Virtual Experience Program')">
+                (click)="openCertificateModal('../../assets/certificates/agile cognizant.png', 'Agile Methodology Virtual Experience Program')">
                 <img src="../../assets/certificates/agile cognizant.png" alt="Agile Cognizant">
                 <h3>Agile Methodology Virtual Experience Program</h3>
                 <p>Cognizant</p>
               </div>
               <div class="carousel-card"
-                (click)="openCertificateModal('../../assets/certificates/Mendix.jpg','Mendix Rapid Developer Certificatio')">
+                (click)="openCertificateModal('../../assets/certificates/Mendix.jpg', 'Mendix Rapid Developer Certification')">
                 <img src="../../assets/certificates/Mendix.jpg" alt="Mendix">
                 <h3>Mendix Rapid Developer Certification</h3>
                 <p>Mendix</p>
               </div>
               <div class="carousel-card"
-                (click)="openCertificateModal('../../assets/certificates/data privacy.jpg','Data Privacy & Information Security Netlink V3.2 Certification')">
+                (click)="openCertificateModal('../../assets/certificates/data privacy.jpg', 'Data Privacy & Information Security Netlink V3.2 Certification')">
                 <img src="../../assets/certificates/data privacy.jpg" alt="Data Privacy Netlink">
                 <h3>Data Privacy & Information Security Netlink V3.2 Certification</h3>
                 <p>Traliant</p>
               </div>
             </div>
-            <p>In addition to my skills and experience, I have acquired several certifications in various domains. These
-              certifications include Business Model Canvas Essentials, Mendix Rapid Developer, Angular (Intermediate and
-              Basic), Data Privacy & Information Security, and Business Intelligence Foundation. These certifications
-              validate
-              my expertise in these areas and demonstrate my commitment to professional development.</p>
+            <p>In addition to my skills and experience, I have acquired several certifications in various domains. These certifications include Business Model Canvas Essentials, Mendix Rapid Developer, Angular (Intermediate and Basic), Data Privacy & Information Security, and Business Intelligence Foundation. These certifications validate my expertise in these areas and demonstrate my commitment to professional development.</p>
           </div>
         </div>
+        
+
         <div id="projectsSection" class="section">
           <div class="projects">
             <h2>Projects</h2>
             <div class="project-list">
-              <h3>Resource Management </h3>
-              <b>Manage Resource</b>
-              <ul class="project-skills">
-                <p>Front End Technology</p>
-                <li>Angular</li>
-              </ul>
-              <ul class="project-skills">
-                <p>Backend End Technology</p>
-                <li>Spring Boot</li>
-              </ul>
-              <ul class="project-skills">
-                <p>Database</p>
-                <li>Postgres SQL</li>
-              </ul>
-              <h3>Training Management</h3>
-              <b>Manage Trainer's & Trainee's</b>
-              <ul class="project-skills">
-                <p>Front End Technology</p>
-                <li>Angular</li>
-              </ul>
-              <ul class="project-skills">
-                <p>Backend End Technology</p>
-                <li>Spring Boot</li>
-              </ul>
-              <ul class="project-skills">
-                <p>Database</p>
-                <li>Postgres SQL</li>
-              </ul>
-              <h3>Personal Portfolio (POC)</h3>
-              <b>Personal Profile</b>
-              <ul class="project-skills">
-                <p>Front End Technology</p>
-                <li>Angular</li>
-              </ul>
-              <h3>To-Do (POC)</h3>
-              <b>TODO List</b>
-              <ul class="project-skills">
-                <p>Front End Technology</p>
-                <li>Angular</li>
-              </ul>
+              <div class="card">
+                <b>Manage Resource</b>
+                <ul class="project-skills">
+                  <p>Front End Technology</p>
+                  <li>Angular</li>
+                </ul>
+                <ul class="project-skills">
+                  <p>Backend End Technology</p>
+                  <li>Spring Boot</li>
+                </ul>
+                <ul class="project-skills">
+                  <p>Database</p>
+                  <li>Postgres SQL</li>
+                </ul>
+                <h3>Resource Management</h3>
+              </div>
+              <div class="card">
+                <b>Manage Trainer's & Trainee's</b>
+                <ul class="project-skills">
+                  <p>Front End Technology</p>
+                  <li>Angular</li>
+                </ul>
+                <ul class="project-skills">
+                  <p>Backend End Technology</p>
+                  <li>Spring Boot</li>
+                </ul>
+                <ul class="project-skills">
+                  <p>Database</p>
+                  <li>Postgres SQL</li>
+                </ul>
+                <h3>Training Management</h3>
+              </div>
+              <div class="card">
+                <b>Personal Profile</b>
+                <ul class="project-skills">
+                  <p>Front End Technology</p>
+                  <li>Angular</li>
+                </ul>
+                <h3>Personal Portfolio (POC)</h3>
+              </div>
+              <div class="card" (click)="todo()">
+                <b>TODO List</b>
+                <ul class="project-skills">
+                  <p>Front End Technology</p>
+                  <li>Angular</li>
+                </ul>
+                <h3>To-Do (POC)</h3>
+              </div>
             </div>
           </div>
         </div>
+
+        <div id="interestsSection" class="section">
+          <div class="interests">
+            <h2>Interests</h2>
+            <ul class="interests-list">
+              <li><i class="fas fa-laptop-code"></i>Exploring New UI Developing Technologies</li>
+              <li><i class="fas fa-book"></i>Reading Books</li>
+              <li><i class="fas fa-table-tennis"></i>Playing Table Tennis</li>
+              <li><i class="fas fa-volleyball-ball"></i>Playing Volleyball</li>
+              <li><i class="fas fa-plane"></i>Traveling</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="languageSection" class="section">
+          <div class="language">
+            <h2>Languages</h2>
+            <div class="language-list">
+              <h4>English</h4>
+              <p>Professional Speaker</p>
+            </div>
+              <div class="language-list">
+                <h4>Tamil</h4>
+                <p>Native Speaker</p></div>
+          </div>
+        </div>
+
+        <div id="contactSection" class="section">
+          <div class="contact-list">
+            <h2>Contact</h2>
+            <ul>
+              <li><a matTooltip="seshan05677@gmail.com" href="mailto:seshan05677@gmail.com"><i
+                    class="fas fa-envelope"></i></a></li>
+              <li><a matTooltip="9786379123" href="tel:9786379123"><i class="fas fa-phone"></i></a></li>
+              <li><a matTooltip="https://www.linkedin.com/in/seshan-r-929b79192/"
+                  href="https://www.linkedin.com/in/seshan-r-929b79192/"><i class="fab fa-linkedin"></i></a></li>
+              <li><a matTooltip="https://github.com/seshanrajavelu" href="https://github.com/seshanrajavelu"><i
+                    class="fa-brands fa-github"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+  
+  </div>
+
+  <div class="dialog" *ngIf="modalCertificateView">
+    <div class="content">
+      <div class="header">
+        <h4 class="title">{{certificateTitle}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="body">
+        <img [src]="enlargedImageUrl" alt="Enlarged Certificate Image" class="enlarged-image">
       </div>
     </div>
   </div>
-</div>
-
-<div class="dialog" *ngIf="modalCertificateView">
-  <div class="content">
-    <div class="header">
-      <h4 class="title">{{certificateTitle}}</h4>
-      <button type="button" class="close" aria-label="Close" (click)="close()">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="body">
-      <img [src]="enlargedImageUrl" alt="Enlarged Certificate Image" class="enlarged-image">
-    </div>
-  </div>
-</div>

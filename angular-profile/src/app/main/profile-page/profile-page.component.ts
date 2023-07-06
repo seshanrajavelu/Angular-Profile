@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { Router } from '@angular/router';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-profile-page',
@@ -24,9 +25,17 @@ export class ProfilePageComponent {
   certificateTitle: string = '';
   activeSection: string = 'about';
 
-  constructor(private modalService: BsModalService) {}
+  constructor( 
+    private router:Router
+    ) {}
 
   ngOnInit(): void {}
+
+  isMobileMenuOpen = true;
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
   isActive(section: string): boolean {
     return this.activeSection === section;
   }
@@ -44,4 +53,9 @@ export class ProfilePageComponent {
   close() {
     this.modalCertificateView = false;
   }
+  todo(){
+    this.router.navigateByUrl('/main/todo')
+  }
+
+  
 }
