@@ -15,7 +15,7 @@
       </ul>
       <h1>My Portfolio</h1>
     </div>
-    <div class="mobile-toggle" >
+    <div class="mobile-toggle">
       <i class="fas fa-bars" (click)="toggleMobileMenu()"></i>
     </div>
     <ul class="nav-menu" *ngIf="isMobileMenuOpen">
@@ -32,19 +32,20 @@
       <button type="button" class="close" aria-label="Close" (click)="toggleMobileMenu()">
         <span aria-hidden="true">&times;</span>
       </button>
-      <li><a href="javascript:void(0)" (click)="scrollToSection('aboutSection')">About</a></li>
-      <li><a href="javascript:void(0)" (click)="scrollToSection('educationSection')">Education</a></li>
-      <li><a href="javascript:void(0)" (click)="scrollToSection('experienceSection')">Experience</a></li>
-      <li><a href="javascript:void(0)" (click)="scrollToSection('skillsSection')">Skill</a></li>
-      <li><a href="javascript:void(0)" (click)="scrollToSection('certificationsSection')">Certification</a></li>
-      <li><a href="javascript:void(0)" (click)="scrollToSection('projectsSection')">Project</a></li>
-      <li><a href="javascript:void(0)" (click)="scrollToSection('interestsSection')">Interest</a></li>
-      <li><a href="javascript:void(0)" (click)="scrollToSection('contactSection')">Contact</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSections('aboutSection')">About</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSections('educationSection')">Education</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSections('experienceSection')">Experience</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSections('skillsSection')">Skill</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSections('certificationsSection')">Certification</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSections('projectsSection')">Project</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSections('interestsSection')">Interest</a></li>
+      <li><a href="javascript:void(0)" (click)="scrollToSections('contactSection')">Contact</a></li>
     </ul>
   </div>
-  
-  
+
+
   <div class="profile-page row">
+
     <div class="side-nav col-md-4">
       <div class="profile-header">
         <div class="profileImg">
@@ -61,15 +62,22 @@
       <div class='air air3'></div>
       <div class='air air4'></div>
     </div>
+    
     <div class="main-content col-md-8">
       <div class="profile-details">
 
         <div id="aboutSection" class="section">
           <div class="aboutMe">
             <h2>About Me</h2>
-            <p>I am a passionate frontend developer with expertise in crafting responsive and user-friendly user interfaces using HTML, CSS, and JavaScript. I enjoy creating visually appealing and intuitive designs to enhance user experiences.</p>
-            <p>I have a strong focus on Angular and constantly strive to push the boundaries of web development. I value effective communication and collaboration for project success, and I am open to feedback and continuous learning.</p>
-            <p>When I'm not coding, I explore new technologies, read tech blogs, and participate in web development meetups. I'm enthusiastic about contributing to the ever-evolving web development community and making a positive impact.</p>
+            <p>I am a passionate frontend developer with expertise in crafting responsive and user-friendly user
+              interfaces using HTML, CSS, and JavaScript. I enjoy creating visually appealing and intuitive designs to
+              enhance user experiences.</p>
+            <p>I have a strong focus on Angular and constantly strive to push the boundaries of web development. I value
+              effective communication and collaboration for project success, and I am open to feedback and continuous
+              learning.</p>
+            <p>When I'm not coding, I explore new technologies, read tech blogs, and participate in web development
+              meetups. I'm enthusiastic about contributing to the ever-evolving web development community and making a
+              positive impact.</p>
           </div>
         </div>
 
@@ -137,58 +145,29 @@
             </ul>
           </div>
         </div>
-        
+
         <div id="certificationsSection" class="section">
           <div class="certification">
             <h2>Certifications</h2>
-            <div class="carousel owl-carousel">
-              <div class="carousel-card"
-                (click)="openCertificateModal('../../assets/certificates/hackerrank basic.png', 'Angular (Basic) Certification')">
-                <img src="../../assets/certificates/hackerrank basic.png" alt="Angular">
-                <h3>Angular (Basic) Certification</h3>
-                <p>HackerRank</p>
+            <div class="carousel-container">
+              <div class="carousels" [style.transform]="'translateX(' + (-activeSlide * 100) + '%)'">
+                <div class="carousel-cards" *ngFor="let certification of certifications; let i = index">
+                  <img [src]="certification.imageSrc" [alt]="certification.title">
+                  <h3>{{ certification.title }}</h3>
+                  <p>{{ certification.provider }}</p>
+                </div>
               </div>
-              <div class="carousel-card"
-                (click)="openCertificateModal('../../assets/certificates/hackerrank intermediate.jpg', 'Angular (Intermediate) Certification')">
-                <img src="../../assets/certificates/hackerrank intermediate.jpg" alt="Angular">
-                <h3>Angular (Intermediate) Certification</h3>
-                <p>HackerRank</p>
-              </div>
-              <div class="carousel-card"
-                (click)="openCertificateModal('../../assets/certificates/BMC.jpg', 'Business Model Canvas Essentials Professional Certification (BMCEPC™)')">
-                <img src="../../assets/certificates/BMC.jpg" alt="BMCEPC">
-                <h3>Business Model Canvas Essentials Professional Certification (BMCEPC™)</h3>
-                <p>CertiProf</p>
-              </div>
-              <div class="carousel-card"
-                (click)="openCertificateModal('../../assets/certificates/BI.jpg', 'Business Intelligence Foundation Professional Certification (BIFPC™)')">
-                <img src="../../assets/certificates/bi.jpg" alt="BIFPC">
-                <h3>Business Intelligence Foundation Professional Certification (BIFPC™)</h3>
-                <p>CertiProf</p>
-              </div>
-              <div class="carousel-card"
-                (click)="openCertificateModal('../../assets/certificates/agile cognizant.png', 'Agile Methodology Virtual Experience Program')">
-                <img src="../../assets/certificates/agile cognizant.png" alt="Agile Cognizant">
-                <h3>Agile Methodology Virtual Experience Program</h3>
-                <p>Cognizant</p>
-              </div>
-              <div class="carousel-card"
-                (click)="openCertificateModal('../../assets/certificates/Mendix.jpg', 'Mendix Rapid Developer Certification')">
-                <img src="../../assets/certificates/Mendix.jpg" alt="Mendix">
-                <h3>Mendix Rapid Developer Certification</h3>
-                <p>Mendix</p>
-              </div>
-              <div class="carousel-card"
-                (click)="openCertificateModal('../../assets/certificates/data privacy.jpg', 'Data Privacy & Information Security Netlink V3.2 Certification')">
-                <img src="../../assets/certificates/data privacy.jpg" alt="Data Privacy Netlink">
-                <h3>Data Privacy & Information Security Netlink V3.2 Certification</h3>
-                <p>Traliant</p>
+              <div class="carousel-navigation">
+                <button *ngFor="let certification of certifications; let i = index" (click)="navigateToSlide(i)"
+                  [class.active]="i === activeSlide"></button>
               </div>
             </div>
-            <p>In addition to my skills and experience, I have acquired several certifications in various domains. These certifications include Business Model Canvas Essentials, Mendix Rapid Developer, Angular (Intermediate and Basic), Data Privacy & Information Security, and Business Intelligence Foundation. These certifications validate my expertise in these areas and demonstrate my commitment to professional development.</p>
+            <p>In addition to my skills and experience, I have acquired several certifications in various domains. These
+              certifications include Business Model Canvas Essentials, Mendix Rapid Developer, Angular (Intermediate and
+              Basic), Data Privacy & Information Security, and Business Intelligence Foundation. These certifications
+              validate my expertise in these areas and demonstrate my commitment to professional development.</p>
           </div>
         </div>
-        
 
         <div id="projectsSection" class="section">
           <div class="projects">
@@ -266,15 +245,16 @@
               <h4>English</h4>
               <p>Professional Speaker</p>
             </div>
-              <div class="language-list">
-                <h4>Tamil</h4>
-                <p>Native Speaker</p></div>
+            <div class="language-list">
+              <h4>Tamil</h4>
+              <p>Native Speaker</p>
+            </div>
           </div>
         </div>
 
         <div id="contactSection" class="section">
-          <div class="contact-list">
-            <h2>Contact</h2>
+          <div class="contact">
+            <h2>Connect Me</h2>
             <ul>
               <li><a matTooltip="seshan05677@gmail.com" href="mailto:seshan05677@gmail.com"><i
                     class="fas fa-envelope"></i></a></li>
@@ -287,23 +267,11 @@
           </div>
         </div>
 
-        
+
+
+
+
       </div>
     </div>
 
-  
-  </div>
-
-  <div class="dialog" *ngIf="modalCertificateView">
-    <div class="content">
-      <div class="header">
-        <h4 class="title">{{certificateTitle}}</h4>
-        <button type="button" class="close" aria-label="Close" (click)="close()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="body">
-        <img [src]="enlargedImageUrl" alt="Enlarged Certificate Image" class="enlarged-image">
-      </div>
-    </div>
   </div>

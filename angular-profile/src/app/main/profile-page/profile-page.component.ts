@@ -8,6 +8,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
   styleUrls: ['./profile-page.component.scss'],
 })
 export class ProfilePageComponent {
+
   skills = [
     { name: 'HTML5 & CSS3', level: 5, expertise: 'Intermediate' },
     { name: 'JavaScript', level: 5, expertise: 'Intermediate' },
@@ -18,44 +19,80 @@ export class ProfilePageComponent {
     { name: 'Git', level: 5, expertise: 'Intermediate' },
     { name: 'PostgresSQL', level: 4, expertise: 'Basic' },
   ];
+  
+  certifications = [
+    {
+      imageSrc: '../../assets/certificates/hackerrank basic.png',
+      title: 'Angular (Basic) Certification',
+      provider: 'HackerRank',
+    },
+    {
+      imageSrc: '../../assets/certificates/hackerrank intermediate.jpg',
+      title: 'Angular (Intermediate) Certification',
+      provider: 'HackerRank',
+    },
+    {
+      imageSrc: '../../assets/certificates/BMC.jpg',
+      title:
+        'Business Model Canvas Essentials Professional Certification (BMCEPC™)',
+      provider: 'CertiProf',
+    },
+    {
+      imageSrc: '../../assets/certificates/BI.jpg',
+      title:
+        'Business Intelligence Foundation Professional Certification (BIFPC™)',
+      provider: 'CertiProf',
+    },
+    {
+      imageSrc: '../../assets/certificates/agile cognizant.png',
+      title: 'Agile Methodology Virtual Experience Program',
+      provider: 'Cognizant',
+    },
+    {
+      imageSrc: '../../assets/certificates/Mendix.jpg',
+      title: 'Mendix Rapid Developer Certification',
+      provider: 'Mendix',
+    },
+    {
+      imageSrc: '../../assets/certificates/data privacy.jpg',
+      title: 'Data Privacy & Information Security Netlink V3.2 Certification',
+      provider: 'Traliant',
+    },
+  ];
 
-  modalRef!: BsModalRef;
-  enlargedImageUrl!: string;
-  modalCertificateView: boolean = false;
-  certificateTitle: string = '';
-  activeSection: string = 'about';
+  isMobileMenuOpen = true;
 
-  constructor( 
-    private router:Router
-    ) {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
-  isMobileMenuOpen = true;
+
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
-  isActive(section: string): boolean {
-    return this.activeSection === section;
-  }
   scrollToSection(id: string) {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
-  openCertificateModal(imageUrl: string, title: string): void {
-    this.enlargedImageUrl = imageUrl;
-    this.certificateTitle = title;
-    this.modalCertificateView = true;
-  }
-  close() {
-    this.modalCertificateView = false;
-  }
-  todo(){
-    this.router.navigateByUrl('/main/todo')
+
+  scrollToSections(id: string) {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    }
   }
 
-  
+  todo() {
+    this.router.navigateByUrl('/main/todo');
+  }
+
+  activeSlide = 0;
+
+  navigateToSlide(index: number) {
+    this.activeSlide = index;
+  }
 }
