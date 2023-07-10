@@ -46,7 +46,7 @@
 
   <div class="profile-page row">
 
-    <div class="side-nav col-md-4">
+    <div class="side-nav col-md-4"  [class.small-height]="shouldReduceSideNavHeight">
       <div class="profile-header">
         <div class="profileImg">
           <img class="profile-picture" src="../../assets/pro-3.png" alt="Profile Picture">
@@ -65,7 +65,7 @@
       <div class='air air4'></div>
     </div>
     
-    <div class="main-content col-md-8">
+    <div class="main-content col-md-8" (scroll)="onMainContentScroll($event)">
       <div class="profile-details">
 
         <div id="aboutSection" class="section">

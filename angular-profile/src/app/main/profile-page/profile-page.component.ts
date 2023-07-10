@@ -95,4 +95,21 @@ export class ProfilePageComponent {
   navigateToSlide(index: number) {
     this.activeSlide = index;
   }
+
+
+  shouldReduceSideNavHeight = false;
+
+  onMainContentScroll(event: Event) {
+    const target = event.target as HTMLElement;
+    const scrollTop = target.scrollTop;
+    const mainContent = document.querySelector('.main-content') as HTMLElement;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    if (isMobile && scrollTop > mainContent.offsetTop) {
+      this.shouldReduceSideNavHeight = true;
+    } else {
+      this.shouldReduceSideNavHeight = false;
+    }
+  }
+
 }

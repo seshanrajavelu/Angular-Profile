@@ -62,14 +62,14 @@
   width: 250px;
   background-color: #f8f8f8;
   transition: max-height 0.3s ease;
-  max-height: 0; 
+  max-height: 0;
   overflow: hidden;
 }
 
 .nav-menu-mobile.show {
   display: block;
   left: 0;
-  max-height: 100vh; 
+  max-height: 100vh;
 }
 .nav-menu-mobile li {
   margin-bottom: 10px;
@@ -177,6 +177,7 @@
   letter-spacing: 3px;
 }
 .downloadBtn {
+  text-decoration: none;
   button {
     padding: 0px 20px;
     border-radius: 5px;
@@ -234,7 +235,7 @@
   border: 1px solid #c9c9c9;
   border-radius: 5px;
   background-color: #fff;
-  margin: 10px;  
+  margin: 10px;
   width: auto;
   padding: 50px;
 }
@@ -754,12 +755,12 @@
     display: flex;
     margin: 0;
     padding: 0;
-    height: 100vh;   
+    height: 100vh;
     width: 100vw;
   }
 
-  .top-navbar{    
-    width: 100vw
+  .top-navbar {
+    width: 100vw;
   }
 
   .profile-page {
@@ -774,10 +775,46 @@
     width: 100%;
     height: 50%;
     display: flex;
+    position: sticky;
     align-items: center;
+    justify-content: center;
     img,
     .air {
       display: none;
+    }
+  }
+
+  .side-nav.small-height {
+    height: 70px;
+    transition: height 0.3s ease;
+    .profile-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin: 10px;
+      padding: 0;
+      .profile-name {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+      }
+      .profile-description {
+        display: none;
+      }
+      .downloadBtn {
+        button {
+          padding:0px 15px;
+        }
+        margin: 0;
+        padding: 0;
+        width: auto;
+        height: auto;
+        text-decoration: none;
+      }
     }
   }
 
@@ -788,7 +825,7 @@
     overflow-x: hidden;
     width: auto;
   }
-  .profile-details{
+  .profile-details {
     width: 100vw;
   }
   .aboutMe,
@@ -799,7 +836,7 @@
   .language,
   .interests,
   .contact,
-   .project-list  {
+  .project-list {
     width: auto;
   }
 
@@ -811,5 +848,4 @@
   .contact ul {
     width: 100%;
   }
-
 }
